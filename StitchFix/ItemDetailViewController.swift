@@ -19,21 +19,15 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet var itemNameLabel: UILabel!
     @IBOutlet var itemDecisionControl: UISegmentedControl!
     
-    var itemDecision: String = ""
-    
     var currentFixItem: FixItem?
     var showCheckout: Bool = false
     
-    var invoiceController = InvoiceViewController()
-    
-    var itemState: [Int : String] = [:]
+    // Create a static property to hold items to keep
+    static var itemsToKeep: [FixItem] = []
     
     @IBAction func decisionChanged(sender: AnyObject) {
-        if let decision = self.itemDecisionControl.titleForSegmentAtIndex(self.itemDecisionControl.selectedSegmentIndex) {
-            self.itemDecision = decision.lowercaseString
-            if let item = self.currentFixItem {
-                setItemDecision(forItemId: item.item_id)
-            }
+        if let item = self.currentFixItem {
+            setItemDecision(forItem: item)
         }
     }
     
@@ -48,13 +42,12 @@ class ItemDetailViewController: UIViewController {
         
         if showCheckout {
             self.checkoutButton.enabled = true
-            print("enabled")
         } else {
             self.checkoutButton.enabled = false
-            print("disabled")
         }
         
         if currentFixItem != nil {
+            self.itemDecisionControl.selectedSegmentIndex = Int(currentFixItem!.item_keep)
             setFixItemDetails(fixItem: currentFixItem!)
         }
     }
@@ -62,6 +55,12 @@ class ItemDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let item = self.currentFixItem {
+            setItemDecision(forItem: item)
+        }
     }
     
     func setFixItemDetails(fixItem item: FixItem) {
@@ -81,21 +80,49 @@ class ItemDetailViewController: UIViewController {
         
         self.itemNameLabel.text = "\(item.item_name)"
         
-        setItemDecision(forItemId: item.item_id)
+        setItemDecision(forItem: item)
     }
     
-    func setItemDecision(forItemId itemId: Int) {
-        self.itemState[itemId] = self.itemDecision
+    func setItemDecision(forItem item: FixItem) {
+        
+        switch self.itemDecisionControl.selectedSegmentIndex {
+        case 0:
+            item.item_keep = false
+            
+            if !ItemDetailViewController.itemsToKeep.isEmpty {
+                if let itemIndex = ItemDetailViewController.itemsToKeep.indexOf(item) {
+                    print("Item removed")
+                    ItemDetailViewController.itemsToKeep.removeAtIndex(Int(itemIndex))
+                }
+            }
+        case 1:
+            item.item_keep = true
+            
+            if !ItemDetailViewController.itemsToKeep.contains(item) {
+                ItemDetailViewController.itemsToKeep.append(item)
+                print("Item added")
+            }
+        default:
+            print("Invalid segment index")
+        }
+        
     }
     
-    /*
+    func flushItemsToKeep() {
+        ItemDetailViewController.itemsToKeep.removeAll()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "itemsToCheckout" {
+            if let invoiceController = segue.destinationViewController as? InvoiceViewController {
+                invoiceController.itemsToKeep = ItemDetailViewController.itemsToKeep
+            }
+        }
     }
-    */
 
 }

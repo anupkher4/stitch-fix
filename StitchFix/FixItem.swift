@@ -17,6 +17,7 @@ class FixItem: NSObject {
     var item_price: String
     var item_brand: String
     var item_image_url: String
+    var item_keep: Bool = false
     
     init(json: JSON) {
         self.item_id = json["id"].intValue

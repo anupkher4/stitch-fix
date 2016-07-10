@@ -43,6 +43,8 @@ class HomePageViewController: UIPageViewController {
                 return
             }
             let startingViewController: ItemDetailViewController = initialViewController
+            // Flush items to keep array
+            startingViewController.flushItemsToKeep()
             let viewControllers = [startingViewController]
             self.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: { done in })
         })
@@ -101,6 +103,7 @@ extension HomePageViewController: UIPageViewControllerDataSource {
         itemDetailViewController.currentFixItem = self.fixItems[index]
         self.currentItemIndex = index
         
+        // Show/Hide checkout button
         if index == (self.fixItems.count - 1) {
             itemDetailViewController.showCheckout = true
         } else {

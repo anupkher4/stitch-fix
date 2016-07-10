@@ -12,18 +12,18 @@ import SwiftyJSON
 
 class FixItem: NSObject {
     
-    var id: Int
-    var name: String
-    var price: String
-    var brand: String
-    var image_url: String
+    var item_id: Int
+    var item_name: String
+    var item_price: String
+    var item_brand: String
+    var item_image_url: String
     
     init(json: JSON) {
-        self.id = json["id"].intValue
-        self.name = json["name"].stringValue
-        self.price = json["price"].stringValue
-        self.brand = json["brand"].stringValue
-        self.image_url = json["image_url"].stringValue
+        self.item_id = json["id"].intValue
+        self.item_name = json["name"].stringValue
+        self.item_price = json["price"].stringValue
+        self.item_brand = json["brand"].stringValue
+        self.item_image_url = json["image_url"].stringValue
     }
     
 }

@@ -14,7 +14,7 @@ class ApiManager: NSObject {
     
     let endpoint = "https://fake-mobile-backend.herokuapp.com/api/current_fix"
     
-    func getCurrentFix(completion: ([FixItem]?) -> ()) {
+    func getCurrentFix(completion: ([FixItem]?, NSError?) -> ()) {
         
         var itemList = [FixItem]()
         
@@ -23,23 +23,23 @@ class ApiManager: NSObject {
             switch response.result {
             case .Success(let value):
                 let json = JSON(value)
-                
                 for (_, item):(String, JSON) in json["shipment_items"] {
                     let fixItem = FixItem(json: item)
                     itemList.append(fixItem)
                 }
-                completion(itemList)
+                print("Fetched items from backend: \(itemList.count)")
+                completion(itemList, nil)
                 
             case .Failure(let error):
                 print("\(error)")
-                completion(nil)
+                completion(nil, error)
             }
             
         })
         
     }
     
-    func getTotalForItems(listOfItemIds itemIds: [Int], completion: ([String : Double]?) -> ()) {
+    func getTotalForItems(listOfItemIds itemIds: [Int], completion: ([String : Double]?, NSError?) -> ()) {
         
         var totalForItems = [String : Double]()
         
@@ -57,11 +57,11 @@ class ApiManager: NSObject {
                 totalForItems["subtotal"] = json["subtotal"].doubleValue
                 totalForItems["tax"] = json["tax"].doubleValue
                 
-                completion(totalForItems)
+                completion(totalForItems, nil)
                 
             case .Failure(let error):
                 print("\(error)")
-                completion(nil)
+                completion(nil, error)
             }
             
         })

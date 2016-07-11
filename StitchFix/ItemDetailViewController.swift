@@ -38,6 +38,7 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.modalPresentationCapturesStatusBarAppearance = true
         // Do any additional setup after loading the view.
         
         if showCheckout {

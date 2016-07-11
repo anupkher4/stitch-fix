@@ -22,8 +22,9 @@ class HomePageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.modalPresentationCapturesStatusBarAppearance = true
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.brownColor()
+        self.view.backgroundColor = UIColor(red: 112.0 / 255.0, green: 160.0 / 255.0, blue: 175.0 / 255.0, alpha: 1.0)
         
         // Get items in current fix
         apiManager.getCurrentFix({ items, error in

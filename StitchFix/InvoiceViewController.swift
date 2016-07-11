@@ -58,7 +58,7 @@ class InvoiceViewController: UIViewController {
             
             if let totalString = totalDict["total"] {
                 let total = String(format: "%.02f", totalString)
-                self.totalTopLabel.text = "$\(total)"
+                self.totalTopLabel.text = "Total = $\(total)"
                 self.totalLabel.text = "$\(total)"
             }
             if let taxString = totalDict["tax"] {

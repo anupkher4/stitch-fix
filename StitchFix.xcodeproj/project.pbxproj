@@ -17,7 +17,6 @@
 		51BC26EA1D2CDD0700A681ED /* FixItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC26E91D2CDD0700A681ED /* FixItem.swift */; };
 		51CEE5E41D2F6553005D5BC6 /* ItemModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEE5E31D2F6553005D5BC6 /* ItemModelViewController.swift */; };
 		51CF22971D31A6FB001E799D /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF22961D31A6FB001E799D /* InvoiceViewController.swift */; };
-		51CF22991D31FD66001E799D /* ItemDecisionShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF22981D31FD66001E799D /* ItemDecisionShareable.swift */; };
 		51F60C9A1D32FD200082AFBE /* InvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F60C991D32FD200082AFBE /* InvoiceTableViewCell.swift */; };
 		A42F492922D7EFE9C9BDB55B /* Pods_StitchFix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C7E7D37A3A1BC8703D7DD3 /* Pods_StitchFix.framework */; };
 /* End PBXBuildFile section */
@@ -36,7 +35,6 @@
 		51BC26E91D2CDD0700A681ED /* FixItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixItem.swift; sourceTree = "<group>"; };
 		51CEE5E31D2F6553005D5BC6 /* ItemModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModelViewController.swift; sourceTree = "<group>"; };
 		51CF22961D31A6FB001E799D /* InvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
-		51CF22981D31FD66001E799D /* ItemDecisionShareable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDecisionShareable.swift; sourceTree = "<group>"; };
 		51F60C991D32FD200082AFBE /* InvoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceTableViewCell.swift; sourceTree = "<group>"; };
 		6039EA2709D913E4813CF313 /* Pods-StitchFix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StitchFix.release.xcconfig"; path = "Pods/Target Support Files/Pods-StitchFix/Pods-StitchFix.release.xcconfig"; sourceTree = "<group>"; };
 		6E42B7AE51F95A3017B9125F /* Pods-StitchFix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StitchFix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StitchFix/Pods-StitchFix.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				51BC26E91D2CDD0700A681ED /* FixItem.swift */,
-				51CF22981D31FD66001E799D /* ItemDecisionShareable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 				51F60C9A1D32FD200082AFBE /* InvoiceTableViewCell.swift in Sources */,
 				51CEE5E41D2F6553005D5BC6 /* ItemModelViewController.swift in Sources */,
 				51CF22971D31A6FB001E799D /* InvoiceViewController.swift in Sources */,
-				51CF22991D31FD66001E799D /* ItemDecisionShareable.swift in Sources */,
 				51BC26E31D2CDA0C00A681ED /* HomePageViewController.swift in Sources */,
 				51BC26CF1D2CD90600A681ED /* AppDelegate.swift in Sources */,
 				51A258FA1D2E410E00F4CE97 /* ApiManager.swift in Sources */,

@@ -1,6 +1,12 @@
 README
 StitchFix Return/Keep App
 
+____________________________________________________________________________________________
+Before running the app:
+1. Please run 'pod install' on the terminal in the project directory to install dependencies
+2. Open the project using 'StitchFix.xcworkspace' file
+____________________________________________________________________________________________
+
 
 High-level flow of the application:
 -----------------------------------

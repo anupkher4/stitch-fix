@@ -23,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		32C7E7D37A3A1BC8703D7DD3 /* Pods_StitchFix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StitchFix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		516605621D3489D00067AB25 /* StitchFixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchFixTests.swift; sourceTree = "<group>"; };
+		516605641D3489D00067AB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A258F91D2E410E00F4CE97 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		51BC26CB1D2CD90600A681ED /* StitchFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BC26CE1D2CD90600A681ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		516605611D3489D00067AB25 /* StitchFixTests */ = {
+			isa = PBXGroup;
+			children = (
+				516605621D3489D00067AB25 /* StitchFixTests.swift */,
+				516605641D3489D00067AB25 /* Info.plist */,
+			);
+			path = StitchFixTests;
+			sourceTree = "<group>";
+		};
 		51A258F81D2E40C100F4CE97 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				51BC26CD1D2CD90600A681ED /* StitchFix */,
+				516605611D3489D00067AB25 /* StitchFixTests */,
 				51BC26CC1D2CD90600A681ED /* Products */,
 				1D4F6443370764A8466B33EC /* Pods */,
 				23D4E79A01CF8163DE46F6E9 /* Frameworks */,
